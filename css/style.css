@@ -1,0 +1,552 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html {
+    box-sizing: border-box;
+    
+}
+
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+body {
+    font-family: 'Montserrat','Arial','Helvetica','sans-serif';
+
+}
+.container {
+    max-width: 1584px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.wrapper-cards {
+    max-width: 1340px;
+    margin: 0 auto;
+
+
+}
+/* ------------------------------------------------------- */
+.header {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+}
+.open {
+    display: flex !important;
+}
+.heder__div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+    display: flex;
+    padding-top: 25px;
+}
+.list {
+    padding-right: 140px;
+
+}
+.list:last-child {
+    padding-right: 0px;
+}
+.items__menu {
+    font-size: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+    color: #FFF;
+    font-family: Montaga;
+    font-weight: 400;
+    transition: 1S;
+}
+.items__menu:hover,.items__menu:focus,.items__menu:active {
+    opacity: 1;
+    color: rgb(27, 25, 25);
+}
+
+/* -----------бургер меню ------------- */
+.burger {
+    display: none;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 18px;
+}
+.burger span {
+    height: 2px;
+    width: 80%;
+    transform: scale(1);
+    background-color: #FFF;
+}
+.burger::before, .burger::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #FFF;
+    transition: all 0.3s ease 0s;
+}
+.burger::before {
+    top: 0;
+}
+.burger::after {
+    bottom: 0;
+}
+
+.burger.active span {
+    transform: scale(0);
+}
+.burger.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+.burger.active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+@media (max-width: 800px) {
+    .burger {
+        display: flex;
+    }   
+    .nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        overflow: hidden;
+        padding: 50px 40px;
+        background-color: #000;
+        animation: burgerAnimation 0.4s;
+    }
+    .item {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+}
+
+/* ---------------конец бургер меню--------------------------- */
+.header-top {
+    min-height: 1117px;
+    background-image: url(../image/fon-header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 80px;
+}
+.header-top__title {
+    padding-top: 370px;
+    font-size: clamp(4.063rem, 2.585rem + 7.39vw, 8.125rem);
+    color: #FFF;
+    font-family: Montaga;
+    font-weight: 400;
+    letter-spacing: 20px;
+    margin-bottom: 30px;
+}
+.header-top__subtitle {
+    color: #FFF;
+    font-family: Montaga;
+    font-size: clamp(1.875rem, 1.193rem + 3.41vw, 3.75rem);
+    font-weight: 400;
+    margin-bottom: 55px;
+}
+.header-top__btn {
+    position: relative;
+    left: 30%;
+    border-radius: 100px;
+    background: #FAFF00;
+    cursor: pointer;
+    transition: 1s;
+    margin-bottom: 255px;
+
+} 
+.header-top__btn:hover {
+    border: none;
+    background-color: #4f4848;
+}
+.header-top__btn-text {
+    color: #000;
+    font-size: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+    font-weight: 400;
+    padding: 22px 59px;
+}
+.header-top__footer-text {
+    color: #FFF;
+font-family: Montaga;
+font-size: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+margin-bottom: 55px;
+}
+/* -------------------------------------------------------------------- */
+.cards-line {
+    border-top: 3px solid  #000;
+    border-bottom: 3px solid  #000;
+min-height: 114px;
+margin-bottom: 72px;
+}
+.cards-flex {
+    display: flex;
+align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    
+
+}
+.coffe {
+    color: #000;
+    font-size: clamp(2.188rem, 1.392rem + 3.98vw, 4.375rem);
+    font-weight: 400;
+
+
+}
+.beig-home {
+    border-radius: 100px;
+    background: #FFFF1E;
+    transition: 1s;
+}
+.beig-home:hover,.beig-home:focus,.beig-home:active {
+    background-color: #000;
+    color: #FFF;
+    opacity: 0.7;
+}  
+.beig-home__text {
+    color: #000;
+padding: 12px 40px;
+font-size: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+}
+/* ---------------------- */
+
+.cards {
+    margin-bottom: 83px;
+    position: relative;
+    display: inline-flex;
+    
+    
+
+}
+.cards-item__name {
+    color: #FFF;
+font-size: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+font-weight: 400;
+
+}
+.button {
+    position: absolute;
+    bottom: 12px;
+    left: 70%;
+    cursor: pointer;
+}
+
+/* вид кофе--------- */
+.coffe-img1 {
+    background-image: url(../image/coffe/espresso.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.coffe-img2 {
+    background-image: url(../image/coffe/americano.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.coffe-img3 {
+    background-image: url(../image/coffe/dopio.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.coffe-img4 {
+    background-image: url(../image/coffe/ristreto.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.coffe-img5 {
+    background-image: url(../image/coffe/lungo.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.coffe-img6 {
+    background-image: url(../image/coffe/cafe-crema.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.coffe-img7 {
+    background-image: url(../image/coffe/cafe-romano.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.coffe-img8 {
+    background-image: url(../image/coffe/kubinskoe-cafe.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.coffe-img9 {
+    background-image: url(../image/coffe/triplo.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.coffe-img10 {
+    background-image: url(../image/coffe/affogoto.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+/* ---------конец кофе-------- */
+/* ----чай------*/
+
+.tea-img1 {
+    background-image: url(../image/tea/black-tea.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+
+.tea-img2 {
+    background-image: url(../image/tea/green-tea.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.tea-img3 {
+    background-image: url(../image/tea/red-tea.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.tea-img4 {
+    background-image: url(../image/tea/matha.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.tea-img5 {
+    background-image: url(../image/tea/gapa.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.tea-img6 {
+    background-image: url(../image/tea/white-tea.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.tea-img7 {
+    background-image: url(../image/tea/dgargi.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.tea-img8 {
+    background-image: url(../image/tea/carkade.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.tea-img9 {
+    background-image: url(../image/tea/yellow-tea.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.tea-img10 {
+    background-image: url(../image/tea/fito-tea.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+/* -----конец чая */
+/*------------ десерты------ */
+
+.dessert-img1 {
+    background-image: url(../image/Dessert/brazo.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.dessert-img2 {
+    background-image: url(../image/Dessert/vinarteto.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.dessert-img3 {
+    background-image: url(../image/Dessert/ginnes.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.dessert-img4 {
+    background-image: url(../image/Dessert/dopoh.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.dessert-img5 {
+    background-image: url(../image/Dessert/cranaxan.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.dessert-img6 {
+    background-image: url(../image/Dessert/panetteno.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.dessert-img7 {
+    background-image: url(../image/Dessert/banoffi.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.dessert-img8 {
+    background-image: url(../image/Dessert/profittroli.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.dessert-img9 {
+    background-image: url(../image/Dessert/roky-road.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+.dessert-img10 {
+    background-image: url(../image/Dessert/tirammisy.png);
+    background-repeat: no-repeat;
+    width: 326px;
+    height: 298px;
+}
+/*------------конец блока десерты */
+
+
+.stock__subtile {
+    color: #000;
+font-family: Montagu Slab;
+font-size: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
+font-weight: 500;
+max-width: 980px;
+margin-left: 20px;
+margin-bottom: 54px;
+
+}
+
+/* таблиция акция */
+
+table {
+
+    border: 3px solid #000;
+    /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
+    width: 1180px;
+    margin: 0  auto 278px;
+
+}
+
+td {
+    border-bottom:  3px solid #000;;
+    height: 150px;
+}
+
+
+.height {
+    min-height: 150px;
+    color: #000;
+font-family: Montagu Slab;
+font-size: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
+font-weight: 500;
+
+}
+.height-centr {
+    min-height: 95px;
+}
+.text-center {
+    text-align: center;
+    color: #000;
+font-family: Montagu Slab;
+font-size: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
+font-weight: 500;
+}
+.bottom {
+    border-bottom: none;
+}
+.adaptiv {
+    overflow-x:auto;
+}
+/*------конец таблицы-----  */
+/* блок о  нас */
+.about__text1 {
+    color: #000;
+    font-size: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+    font-weight: 400;
+    max-width: 1363px;
+    margin-bottom: 46px;
+
+}
+.about__text2 {
+    color: #000;
+    font-size: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+    font-weight: 400;
+    margin-bottom: 79px;
+
+}
+.about__text3 {
+    color: #000;
+    font-size: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+    font-weight: 400;
+    max-width: 1401px;
+    margin-bottom: 46px
+
+}
+.about__text4 {
+    color: #000;
+    font-size: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+    font-weight: 400;
+    max-width: 1553px;
+    margin-bottom: 131px;
+}
+/* подвал сайта */
+.footer {
+    border-top: 3px solid #000;
+
+}
+.footer__block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+} 
+.footer__text {
+    color: #000;
+font-family: Montserrat Alternates;
+font-size: clamp(1.563rem, 0.994rem + 2.84vw, 3.125rem);
+font-weight: 400;
+}
+.media-icons {
+    display: flex;
+}
